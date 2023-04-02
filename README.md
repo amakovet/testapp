@@ -49,6 +49,8 @@ Discord is primary for both chat and meetings, email will be back-up.
 
 <br/>
 Working code example(s) by Alex
+
 ![Screen Capture #1](images/AlexScreenShotA.png)
 ![Screen Capture #2](images/AlexScreenShotB.png)
+
 <br/>
