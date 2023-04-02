@@ -9,7 +9,7 @@
 | Member  | Feature                  | Notes   |
 | ------- | ------------------------ | ------- |
 | Ke      | Search                   | <i></i> |
-| Zining  | Shopping Cart & Payments | <b></b> |
+| Zining  | Shopping Cart & Payments | <i>Shopping Cart may contains function: addProduct, deleteProduct, editQuantity, cartTotal. <br> Payment may contains function: changePaymentMethod, checkOut</i> |
 | Alex    | Products                 | <i></i> |
 | Pritesh |                          | <b></b> |
 
