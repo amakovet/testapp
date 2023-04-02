@@ -36,7 +36,19 @@ Discord is primary for both chat and meetings, email will be back-up.
 
 ## Lessons Learned
 
+<br/>
+
 ## Meeting Notes
 
 | # | Date | Note | Participants
 | 1 | 3.31.2023 | The team will consider best way to update git to set up project, for week 1 and Milestone 1 we are using a sample spring template with no project functionality as team is not familiar with Spring and also wants a project to practice git | Alex, Ke, Zining
+
+<br/>
+
+## Appendix
+
+<br/>
+Working code example(s) by Alex
+![Screen Capture #1](images/AlexScreenShotA.png)
+![Screen Capture #2](images/AlexScreenShotB.png)
+<br/>
