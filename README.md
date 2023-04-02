@@ -11,7 +11,7 @@
 | Ke      | Search                   | <i></i> |
 | Zining  | Shopping Cart & Payments | <b></b> |
 | Alex    | Products                 | <i></i> |
-| Pritesh |                          | <b></b> |
+| Pritesh | User & Merchant Module   | <b></b> |
 
 <br/>
 
