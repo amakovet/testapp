@@ -11,7 +11,7 @@
 | Ke      | Search                   | <i>Determine the search requirements: first need to understand the application search requirements, such as what to search for (product name, description, price, etc.), how to sort the search, the search results paging, etc.</i> |
 | Zining  | Shopping Cart & Payments | <i>Shopping Cart may contains function: addProduct, deleteProduct, editQuantity, cartTotal. <br> Payment may contains function: changePaymentMethod, checkOut</i> |
 | Alex    | Products                 | <i></i> |
-| Pritesh | User & Merchant Module   | <b></b> |
+| Pritesh | User & Merchant Module   | <ul><li>Sign-up and sign-in for different users based kn thier user roles, profile setup with contact and delivery details</li><li>stock management, merchant profile setup, delivery status update</li><li>theses features can be part of the user and merchant modules.</li></ul> |
 
 <br/>
 
