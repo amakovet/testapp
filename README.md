@@ -8,10 +8,10 @@
 
 | Member  | Feature                  | Notes   |
 | ------- | ------------------------ | ------- |
-| Ke      | Search                   | <i></i> |
-| Zining  | Shopping Cart & Payments | <b></b> |
+| Ke      | Search                   | <i>Determine the search requirements: first need to understand the application search requirements, such as what to search for (product name, description, price, etc.), how to sort the search, the search results paging, etc.</i> |
+| Zining  | Shopping Cart & Payments | <i>Shopping Cart may contains function: addProduct, deleteProduct, editQuantity, cartTotal. <br> Payment may contains function: changePaymentMethod, checkOut</i> |
 | Alex    | Products                 | <i></i> |
-| Pritesh |                          | <b></b> |
+| Pritesh | User & Merchant Module   | <ul><li>Sign-up and sign-in for different users based kn thier user roles, profile setup with contact and delivery details</li><li>stock management, merchant profile setup, delivery status update</li><li>theses features can be part of the user and merchant modules.</li></ul> |
 
 <br/>
 
@@ -40,8 +40,9 @@ Discord is primary for both chat and meetings, email will be back-up.
 
 ## Meeting Notes
 
-| # | Date | Note | Participants
-| 1 | 3.31.2023 | The team will consider best way to update git to set up project, for week 1 and Milestone 1 we are using a sample spring template with no project functionality as team is not familiar with Spring and also wants a project to practice git | Alex, Ke, Zining
+| # | Date | Note | Participants|
+|---|------|------|-------------|
+| 1 | 3.31.2023 | The team will consider best way to update git to set up project, for week 1 and Milestone 1 we are using a sample spring template with no project functionality as team is not familiar with Spring and also wants a project to practice git | Alex, Ke, Zining |
 
 <br/>
 
