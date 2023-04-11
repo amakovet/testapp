@@ -30,7 +30,7 @@ Discord is primary for both chat and meetings, email will be back-up.
 
 | #   | Area                  | Decision                    | Alternative | Rationale                                                                    |
 | --- | --------------------- | --------------------------- | ----------- | ---------------------------------------------------------------------------- |
-| 1   | IDE                   | Will use VS Code as primary | IntelliJ    | Team is familiar with VS Code editor                                         |
+| 1   | IDE                   | Will use VS Code as primary | IntelliJ    | Team is familiar with VS Code editor and IntelliJ                                        |
 | 2   | Dependency Management | Gradle                      |             | Team prefers to stay away from XML                                           |
 | 3   | Code                  | Lombok                      |             | Team has little experience with Lombok, and is intrigued to learn & practice |
 
