@@ -1,0 +1,73 @@
+2023-04-16 15:29:37,406 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Starting DepaulmarketplaceApplication using Java 17.0.6 with PID 53577 (/Users/marinamakovetskaia/Marketplace_Repo/testapp/bin/main started by marinamakovetskaia in /Users/marinamakovetskaia/Marketplace_Repo/testapp)
+2023-04-16 15:29:37,409 DEBUG [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-04-16 15:29:37,410 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : The following 1 profile is active: "dev"
+2023-04-16 15:29:40,235 INFO  [restartedMain] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2023-04-16 15:29:40,235 INFO  [restartedMain] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-16 15:29:40,333 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2023-04-16 15:29:40,492 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-04-16 15:29:40,732 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:marketplace user=SA
+2023-04-16 15:29:40,734 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-04-16 15:29:40,798 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-16 15:29:40,882 INFO  [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-16 15:29:41,303 INFO  [restartedMain] SQL dialect : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-16 15:29:42,133 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-16 15:29:42,945 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Started DepaulmarketplaceApplication in 6.22 seconds (process running for 6.928)
+2023-04-16 15:29:43,333 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Num 2
+2023-04-16 15:30:05,330 INFO  [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-04-16 15:30:05,643 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-04-16 15:30:05,758 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2023-04-16 15:30:39,305 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Starting DepaulmarketplaceApplication using Java 17.0.6 with PID 53620 (/Users/marinamakovetskaia/Marketplace_Repo/testapp/bin/main started by marinamakovetskaia in /Users/marinamakovetskaia/Marketplace_Repo/testapp)
+2023-04-16 15:30:39,311 DEBUG [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-04-16 15:30:39,341 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : The following 1 profile is active: "dev"
+2023-04-16 15:30:41,179 INFO  [restartedMain] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2023-04-16 15:30:41,180 INFO  [restartedMain] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-16 15:30:41,287 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2023-04-16 15:30:41,472 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-04-16 15:30:41,720 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:marketplace user=SA
+2023-04-16 15:30:41,723 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-04-16 15:30:41,817 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-16 15:30:41,922 INFO  [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-16 15:30:42,282 INFO  [restartedMain] SQL dialect : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-16 15:30:43,074 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-16 15:30:43,955 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Started DepaulmarketplaceApplication in 5.309 seconds (process running for 6.653)
+2023-04-16 15:30:44,385 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Product Count: 2
+2023-04-16 15:30:47,584 INFO  [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-04-16 15:30:47,935 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-04-16 15:30:48,051 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2023-04-16 15:31:12,017 INFO  [main] com.depaul.depaulmarketplace.DepaulmarketplaceApplicationTests : Starting DepaulmarketplaceApplicationTests using Java 17.0.6 with PID 53672 (started by marinamakovetskaia in /Users/marinamakovetskaia/Marketplace_Repo/testapp)
+2023-04-16 15:31:12,020 DEBUG [main] com.depaul.depaulmarketplace.DepaulmarketplaceApplicationTests : Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-04-16 15:31:12,022 INFO  [main] com.depaul.depaulmarketplace.DepaulmarketplaceApplicationTests : The following 1 profile is active: "dev"
+2023-04-16 15:31:13,612 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-04-16 15:31:13,883 INFO  [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:marketplace user=SA
+2023-04-16 15:31:13,885 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-04-16 15:31:13,948 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-16 15:31:14,012 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-16 15:31:14,441 INFO  [main] SQL dialect : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-16 15:31:15,339 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-16 15:31:16,411 INFO  [main] com.depaul.depaulmarketplace.DepaulmarketplaceApplicationTests : Started DepaulmarketplaceApplicationTests in 5.117 seconds (process running for 6.684)
+2023-04-16 15:31:16,823 INFO  [main] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Product Count: 2
+2023-04-16 15:31:17,164 INFO  [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-04-16 15:31:17,171 WARN  [SpringApplicationShutdownHook] org.hibernate.engine.jdbc.spi.SqlExceptionHelper : SQL Error: 90121, SQLState: 90121
+2023-04-16 15:31:17,172 ERROR [SpringApplicationShutdownHook] org.hibernate.engine.jdbc.spi.SqlExceptionHelper : Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-04-16 15:31:17,173 WARN  [SpringApplicationShutdownHook] org.hibernate.engine.jdbc.spi.SqlExceptionHelper : SQL Error: 90121, SQLState: 90121
+2023-04-16 15:31:17,173 ERROR [SpringApplicationShutdownHook] org.hibernate.engine.jdbc.spi.SqlExceptionHelper : Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-04-16 15:31:17,175 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-04-16 15:31:17,186 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2023-04-16 15:31:55,838 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Starting DepaulmarketplaceApplication using Java 17.0.6 with PID 53703 (/Users/marinamakovetskaia/Marketplace_Repo/testapp/bin/main started by marinamakovetskaia in /Users/marinamakovetskaia/Marketplace_Repo/testapp)
+2023-04-16 15:31:55,841 DEBUG [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-04-16 15:31:55,844 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : The following 1 profile is active: "dev"
+2023-04-16 15:31:57,644 INFO  [restartedMain] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2023-04-16 15:31:57,645 INFO  [restartedMain] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-16 15:31:57,749 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2023-04-16 15:31:57,934 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-04-16 15:31:58,177 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:marketplace user=SA
+2023-04-16 15:31:58,179 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-04-16 15:31:58,248 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-16 15:31:58,333 INFO  [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-16 15:31:58,720 INFO  [restartedMain] SQL dialect : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-16 15:31:59,532 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-16 15:32:00,394 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Started DepaulmarketplaceApplication in 5.28 seconds (process running for 6.296)
+2023-04-16 15:32:00,823 INFO  [restartedMain] com.depaul.depaulmarketplace.DepaulmarketplaceApplication : Product Count: 2
+2023-04-16 15:32:05,472 INFO  [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-04-16 15:32:05,818 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-04-16 15:32:05,942 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.

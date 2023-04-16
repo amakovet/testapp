@@ -1,12 +1,9 @@
-package com.depaul.depaulmarketplace.product;
+package com.depaul.depaulmarketplace.products;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import com.depaul.depaulmarketplace.products.Products;
-
 
 public class ProductTest {
 

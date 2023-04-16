@@ -1,8 +1,14 @@
 environment: development
 
 logging:
+  file:
+    name: logs/marketplace-dev.log
+  pattern:
+    file: "%d %-5level [%thread] %logger : %msg%n"
   level:
-    root: DEBUG
+    root: INFO
+    org.springframework: ERROR
+    com.depaul.depaulmarketplace: DEBUG
 
 spring:
   datasource:
