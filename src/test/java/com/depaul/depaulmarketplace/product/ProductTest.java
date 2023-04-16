@@ -2,12 +2,17 @@ package com.depaul.depaulmarketplace.product;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.depaul.depaulmarketplace.products.Products;
 
 
-public class LombokProductTest {
+public class ProductTest {
+
+//Test purpose: Is lombok working
+
+ @DisplayName("Testing Lombok")  
  @Test
  public void productDataAccess(){   
 
