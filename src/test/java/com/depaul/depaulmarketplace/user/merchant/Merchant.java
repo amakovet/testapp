@@ -1,4 +1,4 @@
 package com.depaul.depaulmarketplace.user.merchant;
 
-public class User {
+public class Merchant {
 }

@@ -1,5 +1,7 @@
 package com.depaul.depaulmarketplace;
 
+import com.depaul.depaulmarketplace.user.MerchantRepository;
+import com.depaul.depaulmarketplace.user.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,5 +26,17 @@ public class DepaulmarketplaceApplication {
 		};
 	}
 
+	@Bean
+	public CommandLineRunner user(UserRepository userRepository) {
+		return (args) -> {
+			log.info("User Count: " + userRepository.count());
+		};
+	}
 
+	@Bean
+	public CommandLineRunner merchant(MerchantRepository merchantRepository) {
+		return (args) -> {
+			log.info("Merchant Count: " + merchantRepository.count());
+		};
+	}
 }
