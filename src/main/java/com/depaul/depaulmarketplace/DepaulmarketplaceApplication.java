@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import lombok.extern.log4j.Log4j2;
 
 import com.depaul.depaulmarketplace.products.ProductsRepository;
+import com.depaul.depaulmarketplace.shoppingcart.ShoppingCartRepository;
 
 @Log4j2
 @SpringBootApplication
@@ -24,5 +25,10 @@ public class DepaulmarketplaceApplication {
 		};
 	}
 
-
+	@Bean
+	public CommandLineRunner cart(ShoppingCartRepository repo) {
+		return (args) -> {
+			log.info("Cart Count: " + repo.count());
+		};
+	}
 }
