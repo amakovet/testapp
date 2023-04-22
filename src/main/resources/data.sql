@@ -1,6 +1,7 @@
---hydrate product table with sample data
+--hydrate product table with products
 insert into products(name) values ('product 1');
 insert into products(name) values ('product 2');
+insert into products(name) values ('product 23');
 
 -- insert some fake data to shopping cart
 insert into carts(id, total) values (000000, 145.7);
