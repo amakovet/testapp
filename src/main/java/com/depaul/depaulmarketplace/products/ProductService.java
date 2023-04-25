@@ -33,4 +33,10 @@ public class ProductService {
         return product;
     }
 
+    @GetMapping("category/{category}")
+    public List<Products> get(@PathVariable("category") String category) {
+        var retval = repo.findAllByCategory(category);
+        return retval;
+    }
+
 }
