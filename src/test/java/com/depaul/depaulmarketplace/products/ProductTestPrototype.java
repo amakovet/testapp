@@ -7,12 +7,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 
 @DataJpaTest
 @ActiveProfiles
+@SpringBootTest
 public class ProductTestPrototype {
    @Autowired
    private ProductsRepository repo;
@@ -44,6 +46,20 @@ public class ProductTestPrototype {
 
       assertEquals(1, findA.size());
 
+   }
+
+   @DisplayName("Testing Lombok")
+   @Test
+   public void productDataAccess() {
+
+      var product = new Products();
+      product.setId(1);
+      product.setName("A product");
+      product.setCategory("Books");
+      product.setPrice(15.99);
+      product.setInventory(934);
+      var expectedNoError = "Products(id=1, name=A product, category=Books, price=15.99, inventory=934)";
+      assertEquals(expectedNoError, product.toString());
    }
 
 }
