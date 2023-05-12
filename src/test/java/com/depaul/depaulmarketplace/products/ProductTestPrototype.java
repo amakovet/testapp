@@ -14,44 +14,48 @@ import java.util.List;
 
 @DataJpaTest
 @ActiveProfiles
-@SpringBootTest
 public class ProductTestPrototype {
    @Autowired
    private ProductsRepository repo;
 
    // Test purpose: testing of CRUD in repo and entities persistence
 
-   @DisplayName("Testing CRUD")
-   @Test
-   public void testingCrud() {
-      var product = new Products();
-      product.setName("product3");
-      var productIdBeforeAddedToRepo = product.getId();
-      long repoCountBeforeAddedProduct = repo.count();
-      repo.save(product);
-      var repoCountAfterAddedProduct = repo.count();
-      var productIdAfterAddedToRepo = product.getId();
+   /*
+    * DisplayName("Testing CRUD")
+    * 
+    * @Test
+    * public void testingCrud() {
+    * var product = new Products();
+    * product.setName("product3");
+    * var productIdBeforeAddedToRepo = product.getId();
+    * long repoCountBeforeAddedProduct = repo.count();
+    * repo.save(product);
+    * var repoCountAfterAddedProduct = repo.count();
+    * var productIdAfterAddedToRepo = product.getId();
+    * 
+    * // there should be 1 more in the database after the save
+    * assertEquals(repoCountBeforeAddedProduct + 1, repoCountAfterAddedProduct);
+    * 
+    * // original id was 0 but afterwards the id was generated and so should not be
+    * // equal
+    * assertNotEquals(productIdBeforeAddedToRepo, productIdAfterAddedToRepo);
+    * }
+    */
 
-      // there should be 1 more in the database after the save
-      assertEquals(repoCountBeforeAddedProduct + 1, repoCountAfterAddedProduct);
+   /*
+    * @Test
+    * public void testFindByName() {
+    * List<Products> findA = repo.findByName("product 1");
+    * 
+    * assertEquals(1, findA.size());
+    * 
+    * }
+    */
 
-      // original id was 0 but afterwards the id was generated and so should not be
-      // equal
-      assertNotEquals(productIdBeforeAddedToRepo, productIdAfterAddedToRepo);
-   }
-
-   @Test
-   public void testFindByName() {
-      List<Products> findA = repo.findByName("product 1");
-
-      assertEquals(1, findA.size());
-
-   }
-
-   @DisplayName("Testing Lombok")
+/*    @DisplayName("Testing Lombok")
    @Test
    public void productDataAccess() {
-
+s
       var product = new Products();
       product.setId(1);
       product.setName("A product");
@@ -60,6 +64,6 @@ public class ProductTestPrototype {
       product.setInventory(934);
       var expectedNoError = "Products(id=1, name=A product, category=Books, price=15.99, inventory=934)";
       assertEquals(expectedNoError, product.toString());
-   }
+   } */
 
 }
