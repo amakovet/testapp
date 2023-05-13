@@ -3,6 +3,8 @@
 - Milestone 1: Sample project code added to Git from Spring template to let the team get familiar with Spring and practice git. Defined project and initial set of features areas team will work on.
 
 - Milestone 2: Starting initial set up of respective feature area's of the marketplace application; including H2 db data persistence, unit tests.
+
+- Milestone 3: Setting up build and deployment pipelines. Adding in service layers in feature areas.
   <br/>
 
 ## Project Members
@@ -59,5 +61,6 @@ Working code example(s) by Alex
 
 ![Screen Capture #1](images/AlexScreenShotA.png)
 ![Screen Capture #2](images/AlexScreenShotB.png)
+![Screen Capture #3](images/AlexScreenShotCIBuild.png)
 
 <br/>
