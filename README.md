@@ -63,4 +63,8 @@ Working code example(s) by Alex
 ![Screen Capture #2](images/AlexScreenShotB.png)
 ![Screen Capture #3](images/AlexScreenShotCIBuild.png)
 
+Docker - Local run by Alex
+![Screen Capture #4](images/AlexScreenShotDockerLocalRun.png)
+![Screen Capture #5](images/AlexScreenShotDockerLocalRunDataWorking.png)
+
 <br/>

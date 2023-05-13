@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -26,6 +27,7 @@ public class ShoppingCart {
     private User user;
 
     // an arrayList that contains many Products user added
+    @ManyToMany
     private ArrayList<Products> cart;
 
     // cart total with tax exclude
