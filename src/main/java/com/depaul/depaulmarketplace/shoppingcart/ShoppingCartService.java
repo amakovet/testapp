@@ -9,26 +9,34 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.depaul.depaulmarketplace.products.ProductService;
+
 
 @RestController
-@RequestMapping("/api/db/shopping-cart")
+@RequestMapping("/api/shopping-cart")
 public class ShoppingCartService{
 
     @Autowired
-    private ShoppingCartRepository repo;
+    private ShoppingCartRepository cartRepo;
+
+    @Autowired
+    private ProductService productServ;
+
+    @Autowired
+    private CartItemRepository cartItemRepo;
 
     @GetMapping("/")
     public List<ShoppingCart> getAllShoppingCarts() {
-        return repo.findAll();
+        return cartRepo.findAll();
     }
 
-    @PostMapping("/")
-    public void saveShoppingCart(ShoppingCart shoppingCart) {
-        repo.save(shoppingCart);
+    @GetMapping("/{userId}")
+    public ShoppingCart findCartByUserId(@PathVariable Long userId) {
+        return cartRepo.findByUserId(userId);
     }
 
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable("id") Long id) {
-        repo.deleteById(id);
+        cartRepo.deleteById(id);
     }
 }
