@@ -1,18 +1,16 @@
 package com.depaul.depaulmarketplace;
 
-import com.depaul.depaulmarketplace.user.MerchantRepository;
-import com.depaul.depaulmarketplace.user.UserRepository;
+import com.depaul.depaulmarketplace.products.ProductsRepository;
+import com.depaul.depaulmarketplace.shoppingcart.ShoppingCartRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import lombok.extern.log4j.Log4j2;
-
-import com.depaul.depaulmarketplace.products.ProductsRepository;
-import com.depaul.depaulmarketplace.shoppingcart.ShoppingCartRepository;
 
 @Log4j2
 @SpringBootApplication
+
 public class DepaulmarketplaceApplication {
 
     public static void main(String[] args) {
@@ -21,30 +19,17 @@ public class DepaulmarketplaceApplication {
 
 
     @Bean
-	public CommandLineRunner product(ProductsRepository repo) {
-		return (args) -> {
-			log.info("Product Count: " + repo.count());
-		};
-	}
+    public CommandLineRunner product(ProductsRepository repo) {
+        return (args) -> {
+            log.info("Product Count: " + repo.count());
+        };
+    }
 
-	@Bean
-	public CommandLineRunner user(UserRepository userRepository) {
-		return (args) -> {
-			log.info("User Count: " + userRepository.count());
-		};
-	}
 
-	@Bean
-	public CommandLineRunner merchant(MerchantRepository merchantRepository) {
-		return (args) -> {
-			log.info("Merchant Count: " + merchantRepository.count());
-		};
-	}
-
-	@Bean
-	public CommandLineRunner cart(ShoppingCartRepository repo) {
-		return (args) -> {
-			log.info("Cart Count: " + repo.count());
-		};
-	}
+    @Bean
+    public CommandLineRunner cart(ShoppingCartRepository repo) {
+        return (args) -> {
+            log.info("Cart Count: " + repo.count());
+        };
+    }
 }

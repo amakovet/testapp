@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 @Data
 @Entity
@@ -16,9 +14,7 @@ public class UserRole implements Serializable {
     @Column(name = "user_role_id")
     private Long id;
     private String roleName;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+
 
     public UserRole(Long id, String roleName) {
         this.id = id;
@@ -35,14 +31,6 @@ public class UserRole implements Serializable {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName;
-    }
-
-    public User getUsers() {
-        return user;
-    }
-
-    public void setUsers(User users) {
-        this.user = users;
     }
 
     public Long getId() {

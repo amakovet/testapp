@@ -6,9 +6,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Entity
@@ -29,21 +27,23 @@ public class User implements Serializable {
     private String password;
     private String address;
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<City> city;
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<State> state;
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Country> country;
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<UserRole> role;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private UserRole role;
     @Column(name = "created_at")
     private Date createdAt;
     @Column(name = "updated_at")
     private Date updatedAt;
-    public User(){
-        role=new ArrayList<>();
+
+    public User() {
+        role = null;
     }
+
     public String getAddress() {
         return address;
     }
@@ -116,11 +116,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public List<UserRole> getRole() {
+    public UserRole getRole() {
         return role;
     }
 
-    public void setRole(List<UserRole> role) {
+    public void setRole(UserRole role) {
         this.role = role;
     }
 
