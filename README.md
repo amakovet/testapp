@@ -1,3 +1,4 @@
+[![Java CI with Gradle](https://github.com/amakovet/testapp/actions/workflows/gradle.yml/badge.svg)](https://github.com/amakovet/testapp/actions/workflows/gradle.yml)
 # Purpose
 
 - Milestone 1: Sample project code added to Git from Spring template to let the team get familiar with Spring and practice git. Defined project and initial set of features areas team will work on.
