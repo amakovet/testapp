@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -22,7 +24,8 @@ public class ShoppingCart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
 
     // an arrayList that contains many Products user added
@@ -31,4 +34,22 @@ public class ShoppingCart {
 
     // cart total with tax exclude
     private double total;
+
+    public void addCartItem(List<CartItem> items, CartItem cartItem) {
+        items.add(cartItem);
+        updateTotal();
+    }
+
+    public void removeCartItem(List<CartItem> items, CartItem cartItem) {
+        items.remove(cartItem);
+        updateTotal();
+    }
+
+    private void updateTotal() {
+        double total = 0;
+        for (CartItem item: cartItems) {
+            total += item.getPricePerItem();
+        }
+        setTotal(total);
+    }
 }
