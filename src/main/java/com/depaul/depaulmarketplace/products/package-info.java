@@ -14,5 +14,10 @@ package com.depaul.depaulmarketplace.products;
  * Building out initial set of units tests including crud and testing of
  * aditional Jpa finders and data updates.
  * 
- * 
+ * Configured project to use H2
+ * set up logs
+ * Set up Product service
+ * configured SWAGGER
+ * Set up and configured CI build actions process in GIT
+ * Set up docker and ran locally
  */
