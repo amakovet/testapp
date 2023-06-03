@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.depaul.depaulmarketplace.products.Products;
-import com.depaul.depaulmarketplace.products.ProductService;
 import com.depaul.depaulmarketplace.products.ProductsRepository;
 import com.depaul.depaulmarketplace.user.UserRepository;
 import com.depaul.depaulmarketplace.user.User;
@@ -24,9 +23,6 @@ public class ShoppingCartService{
 
     @Autowired
     private ShoppingCartRepository cartRepo;
-
-    @Autowired
-    private ProductService productServ;
 
     @Autowired
     private ProductsRepository productRepo;
@@ -55,8 +51,20 @@ public class ShoppingCartService{
         return cart;
     }
 
+    @GetMapping("/{userId}/total")
+    public double getCartTotalByUserId(@PathVariable Long userId) {
+        User user = userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User with ID " + userId + " not found"));
+
+        // get shopping cart
+        ShoppingCart cart = cartRepo.findByUser(user);
+        if (cart == null) {
+            return 0.0;
+        }
+        return cart.getTotal();
+    }
+
     @PostMapping("/{userId}/add-product/{productId}")
-    public ResponseEntity<String> addProductToCart(@PathVariable Long userId, @PathVariable Long productId, @RequestParam int quantity) {
+    public ResponseEntity<String> addProductToCart(@PathVariable Long userId, @PathVariable Long productId, @RequestParam("quantity") int quantity) {
         // get user
         User user = userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User with ID " + userId + " not found"));
 
@@ -102,6 +110,7 @@ public class ShoppingCartService{
 
         // set new quantity for cartItem, and update inventory
         item.setQuantity(newQuantity);
+        item.setPricePerItem(newQuantity * product.getPrice());
         product.setInventory(product.getInventory() - newQuantity);
 
         // save everything
@@ -148,6 +157,77 @@ public class ShoppingCartService{
         cartRepo.save(cart);
 
         return ResponseEntity.ok("Product removed from cart successfully");
+    }
+
+    @PostMapping("/{userId}/edit-quantity")
+    public ShoppingCart editQuantity(@PathVariable Long userId, @RequestParam("cartItemId") Long cartItemId, @RequestParam("newQuantity") int newQuantity) {
+        User user = userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User with ID " + userId + " not found"));
+
+        // get shopping cart
+        ShoppingCart cart = cartRepo.findByUser(user);
+        if (cart == null) {
+            throw new ResourceNotFoundException("Please add product to the cart before editing");
+        }
+
+        // get all cartItems in cart, find the target item
+        List<CartItem> cartItems = cart.getCartItems();
+        CartItem item = null;
+        for (CartItem i: cartItems) {
+            if (i.getId() == cartItemId) {
+                item = i;
+            }
+        }
+        if (item == null) {
+            throw new ResourceNotFoundException("Please add product to the cart before editing");
+        }
+
+        // adjust product inventory and save to product repo
+        int oldQuantity = item.getQuantity();
+        int difference = 0;
+        Products product = item.getProduct();
+        if (oldQuantity > newQuantity) {
+            difference = oldQuantity - newQuantity;
+            product.setInventory(product.getInventory() + difference);
+        } else {
+            difference = newQuantity - oldQuantity;
+            product.setInventory(product.getInventory() - difference);
+        }
+        productRepo.save(product);
+
+        // set new quantity and price per item and save to item repo
+        item.setQuantity(newQuantity);
+        item.setPricePerItem(newQuantity * item.getProduct().getPrice());
+        itemRepo.save(item);
+
+        // update cart total and save to cart repo
+        cart.updateTotal();
+        cartRepo.save(cart);
+
+        return cart;
+    }
+
+    @PostMapping("/{userId}/checkout")
+    public ResponseEntity<String> checkout(@PathVariable Long userId) {
+        User user = userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User with ID " + userId + " not found"));
+
+        // get shopping cart
+        ShoppingCart cart = cartRepo.findByUser(user);
+        if (cart == null) {
+            throw new ResourceNotFoundException("Please add product to the cart before checking  out");
+        }
+
+        double total = cart.getTotal();
+
+        List<CartItem> cartItems = cart.getCartItems();
+        for (CartItem cartItem : cartItems) {
+            itemRepo.delete(cartItem);
+        }
+
+        cart.getCartItems().clear();
+        cart.updateTotal();
+        cartRepo.save(cart);
+
+        return ResponseEntity.ok("You have checked out ssuccessfully. Your total is $" + total);
     }
  
     @DeleteMapping("/{id}")

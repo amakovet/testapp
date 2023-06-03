@@ -45,7 +45,7 @@ public class ShoppingCart {
         updateTotal();
     }
 
-    private void updateTotal() {
+    public void updateTotal() {
         double total = 0;
         for (CartItem item: cartItems) {
             total += item.getPricePerItem();
