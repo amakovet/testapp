@@ -1,0 +1,15 @@
+#Be sure to change volumn location
+#start:   docker-compose -f docker-dbonly.yml up -d
+#stop:    docker-compse -f docker-dbonly.yml down
+
+version: "3.8"
+services:
+  mongo:
+    container_name: marketplaceapp-mongo
+    image: mongo
+    env_file: ./.env
+    volumes:
+      - "$MONGO_EXTERNAL_LOC:/data/db"
+    restart: always
+    ports:
+      - $MONGO_PORT:$MONGO_PORT

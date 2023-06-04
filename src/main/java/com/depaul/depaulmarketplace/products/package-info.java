@@ -20,4 +20,5 @@ package com.depaul.depaulmarketplace.products;
  * configured SWAGGER
  * Set up and configured CI build actions process in GIT
  * Set up docker and ran locally
+ * Set up NoSQL mongo db version for product service for self learning on NoSQL
  */

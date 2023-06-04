@@ -1,0 +1,16 @@
+#Be sure to change volumn location
+#start:   docker-compose -f docker-sql.yml up -d
+#stop:    docker-compse -f docker-sql.yml down
+
+version: "3.8"
+services:
+  sql:
+    container_name: marketplaceapp-postgres
+    image: postgres
+    volumes:
+      - "~/postgres/data:/var/lib/postgresql/data"
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
