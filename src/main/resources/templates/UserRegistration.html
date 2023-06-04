@@ -61,6 +61,14 @@
             color: #008000;
             margin-top: 10px;
         }
+        a.reset-password-link {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        a.reset-password-link:hover {
+            color: darkblue;
+        }
     </style>
 </head>
 <body>
@@ -78,25 +86,18 @@
     <input type="password" id="password" name="password" required><br><br>
 
 
-
     <input type="submit" value="Register">
+    <a href="/user/reset-password" class="reset-password-link">Reset Password</a>
+
 </form>
-<script>
-
-    function redirectToLoginPage() {
-        window.location.href = "/user/login-user";
-    }
-</script>
 
 
-<th:block th:if="${param.registrationSuccess}">
-    <p class="success-message">Registration Successful! You can login now.</p>
-    <script>
-        redirectToLoginPage();
-    </script>
+
+<th:block th:if="${registrationSuccess}">
+    <p class="success-message">Registration successful. Please <a href="/user/login-user?registrationSuccess=true">login</a>.</p>
 </th:block>
 <th:block th:if="${param.registrationSuccess == false}">
-    <p class="success-message">Registration Failed! Try Again.</p>
+    <p class="failure-message">Registration Failed! Try Again.</p>
 </th:block>
 </body>
 </html>

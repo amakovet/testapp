@@ -20,6 +20,10 @@ public class UserUIController {
     public String showRegistrationPage(){
         return "UserRegistration";
     }
+    @GetMapping("/reset-password")
+    public String showResetPasswordPage(){
+        return "ResetPassword";
+    }
     @GetMapping("/login-user")
     public String showLoginPage(@RequestParam(value = "loginSuccess", required = false) boolean loginSuccess, Model model,RedirectAttributes redirectAttributes) {
         return "UserLogin";
@@ -55,7 +59,17 @@ public class UserUIController {
             return "redirect:/user/login-user";
         }
     }
-
+    @PostMapping("/reset")
+    public String resetPassword(@RequestParam("email") String email,RedirectAttributes redirectAttributes) {
+        try {
+            String newPassword=userServices.resetPassword(email);
+            redirectAttributes.addAttribute("newPassword",newPassword);
+            return "redirect:/user/login-user";
+        } catch (IllegalArgumentException e) {
+            redirectAttributes.addAttribute("error",true);
+            return "redirect:/user/reset-password";
+        }
+    }
 
 }
 

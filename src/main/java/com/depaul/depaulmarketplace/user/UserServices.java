@@ -44,13 +44,14 @@ public class UserServices {
         }
     }
 
-    public void resetPassword(String email) {
+    public String resetPassword(String email) {
 
          User user = userRepository.findByEmail(email);
          if (user != null) {
              String newPassword = generateNewPassword();
              user.setPassword(newPassword);
              userRepository.save(user);
+             return newPassword;
          } else {
              throw new IllegalArgumentException("User not found");
          }
