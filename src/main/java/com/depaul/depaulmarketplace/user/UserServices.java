@@ -78,4 +78,7 @@ public class UserServices {
         }
         return newPassword.toString();
     }
+
+    public class UserRegistrationSuccessException extends RuntimeException  {
+    }
 }

@@ -7,7 +7,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
-
 public class UserServicesController {
 
     private final UserServices userServices;
@@ -26,6 +25,7 @@ public class UserServicesController {
         user.setLastName(lastName);
         return userServices.registerUser(user);
     }
+
     @PostMapping("/list")
     public List<User> list(){
         return userServices.listAll();
