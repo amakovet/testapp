@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="data"></div>
+<button onclick="prevPage()">Prev</button>
+<button onclick="nextPage()">Next</button>
+<button onclick="sortByName()">Sort by Name</button>
+<button onclick="sortByPrice()">Sort by Price</button>
+
+<script>
+  let pageNo = 0;
+  const pageSize = 5;
+  let sortBy = 'name';
+  let sortDir = 'asc';
+
+  function fetchData() {
+    fetch(`http://localhost:8080/api/v1/carts`)
+        .then(response => response.json())
+        .then(data => {
+          const div = document.getElementById('data');
+          div.innerHTML = '';
+          data.content.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.textContent = `${item.name}: ${item.price}`;
+            div.appendChild(itemDiv);
+          });
+        })
+        .catch(error => console.error('Error:', error));
+  }
+
+  function prevPage() {
+    if (pageNo > 0) {
+      pageNo--;
+      fetchData();
+    }
+  }
+
+  function nextPage() {
+    pageNo++;
+    fetchData();
+  }
+
+  function sortByName() {
+    sortBy = 'name';
+    fetchData();
+  }
+
+  function sortByPrice() {
+    sortBy = 'price';
+    fetchData();
+  }
+
+  fetchData();
+</script>
+</body>
+</html>
