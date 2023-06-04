@@ -47,11 +47,12 @@ Discord is primary for both chat and meetings, email will be back-up.
 
 ## Meeting Notes
 
-| #   | Date      | Note                                                                                                                                                                                                                                         | Participants              |
-| --- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| 1   | 3.31.2023 | The team will consider best way to update git to set up project, for week 1 and Milestone 1 we are using a sample spring template with no project functionality as team is not familiar with Spring and also wants a project to practice git | Alex, Ke, Zining          |
-| 2   | 4.7.2023  | Team is going to start to shell in their features in scope of getting started with Milestone 2 and related SQL set up. We also set a goal for next week to start aligning on a data contract between our features                            | Alex, Ke, Zining, Pritesh |
-| 3   | 4.14.2023 | Team discussed progress on Milestone 2 objectives indvidually. No blockers indetified.                                                                                                                                                       | Alex, Ke, Zining          |
+| #  | Date      | Note                                                                                                                                                                                                                                         | Participants              |
+| -- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| 1  | 3.31.2023 | The team will consider best way to update git to set up project, for week 1 and Milestone 1 we are using a sample spring template with no project functionality as team is not familiar with Spring and also wants a project to practice git | Alex, Ke, Zining          |
+| 2  | 4.7.2023  | Team is going to start to shell in their features in scope of getting started with Milestone 2 and related SQL set up. We also set a goal for next week to start aligning on a data contract between our features                            | Alex, Ke, Zining, Pritesh |
+| 3  | 4.14.2023 | Team discussed progress on Milestone 2 objectives individually. No blockers identified.                                                                                                                                                      | Alex, Ke, Zining          |
+| 4  | 5.26.2023 | Team is going to finalize the project in upcoming week.                                                                                                                                                                                      | Pritesh, Alex, Ke, Zining |
 
 <br/>
 
@@ -69,3 +70,17 @@ Docker - Local run by Alex
 ![Screen Capture #5](images/AlexScreenShotDockerLocalRunDataWorking.png)
 
 <br/>
+
+Working code example(s) by Pritesh
+![list-users.png](images%2Flist-users.png)
+![login.png](images%2Flogin.png)
+![login-failed.png](images%2Flogin-failed.png)
+![login-success.png](images%2Flogin-success.png)
+![merchants-list.png](images%2Fmerchants-list.png)
+![merchants-register.png](images%2Fmerchants-register.png)
+![newPassword.png](images%2FnewPassword.png)
+![register.png](images%2Fregister.png)
+![register-redirect.png](images%2Fregister-redirect.png)
+![register-user.png](images%2Fregister-user.png)
+![reset-password.png](images%2Freset-password.png)
+![reset-password-error.png](images%2Freset-password-error.png)

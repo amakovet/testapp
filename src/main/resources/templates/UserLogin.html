@@ -83,7 +83,9 @@
   <button type="submit">Login</button>
   <a href="/user/reset-password" class="reset-password-link">Reset Password</a>
 </form>
-
+<th:block th:if="${param.newPassword!=null}">
+  <p class="success-message">New Password is : [[${param.newPassword}]]</p>
+</th:block>
 
 <th:block th:if="${param.registrationSuccess}">
   <p class="success-message">Registration successful! You can now log in.</p>
