@@ -14,7 +14,6 @@ public class Products {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    // TODO: clean up field name
     private String name;
 
     private String category;
