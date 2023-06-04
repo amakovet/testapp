@@ -14,11 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.depaul.depaulmarketplace.products.Products;
 import com.depaul.depaulmarketplace.products.ProductsRepository;
 import com.depaul.depaulmarketplace.user.UserRepository;
+
+import lombok.extern.log4j.Log4j2;
+
 import com.depaul.depaulmarketplace.user.User;
 
 
 @RestController
 @RequestMapping("/api/shopping-cart")
+@Log4j2
 public class ShoppingCartService{
 
     @Autowired
@@ -35,11 +39,14 @@ public class ShoppingCartService{
 
     @GetMapping("/")
     public List<ShoppingCart> getAllShoppingCarts() {
+        log.traceEntry("Enter getAllShoppingCarts");
+        log.traceEntry("Leave getAllShoppingCarts");
         return cartRepo.findAll();
     }
 
     @GetMapping("/{userId}")
     public ShoppingCart getCartByUserId(@PathVariable Long userId) {
+        log.traceEntry("Enter getCartByUserId", userId);
         User user = userRepo.findById(userId)
         .orElseThrow(() -> new ResourceNotFoundException("User with ID " + userId + " not found"));
 
@@ -48,11 +55,13 @@ public class ShoppingCartService{
             cart = new ShoppingCart();
             cart.setUser(user);
         }
+        log.traceEntry("Leave getCartByUserId", userId);
         return cart;
     }
 
     @GetMapping("/{userId}/total")
     public double getCartTotalByUserId(@PathVariable Long userId) {
+        log.traceEntry("Enter getCartTotalByUserId", userId);
         User user = userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User with ID " + userId + " not found"));
 
         // get shopping cart
@@ -60,11 +69,13 @@ public class ShoppingCartService{
         if (cart == null) {
             return 0.0;
         }
+        log.traceEntry("Leave getCartTotalByUserId", userId);
         return cart.getTotal();
     }
 
     @PostMapping("/{userId}/add-product/{productId}")
     public ResponseEntity<String> addProductToCart(@PathVariable Long userId, @PathVariable Long productId, @RequestParam("quantity") int quantity) {
+        log.traceEntry("Enter addProductToCart", userId, productId, quantity);
         // get user
         User user = userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User with ID " + userId + " not found"));
 
@@ -118,11 +129,13 @@ public class ShoppingCartService{
         cartRepo.save(cart);
         productRepo.save(product);
 
+        log.traceEntry("Leave addProductToCart", userId, productId, quantity);
         return ResponseEntity.ok("Product added to cart successfully");
     }
 
     @PostMapping("/{userId}/remove-cart-item/{cartItemId}")
     public ResponseEntity<String> removeCartItemFromCart(@PathVariable Long userId, @PathVariable Long cartItemId) {
+        log.traceEntry("Enter removeCartItemFromCart", userId, cartItemId);
         // get user
         User user = userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User with ID " + userId + " not found"));
 
@@ -156,11 +169,13 @@ public class ShoppingCartService{
         cart.setCartItems(cartItems);
         cartRepo.save(cart);
 
+        log.traceEntry("Leave removeCartItemFromCart", userId, cartItemId);
         return ResponseEntity.ok("Product removed from cart successfully");
     }
 
     @PostMapping("/{userId}/edit-quantity")
     public ShoppingCart editQuantity(@PathVariable Long userId, @RequestParam("cartItemId") Long cartItemId, @RequestParam("newQuantity") int newQuantity) {
+        log.traceEntry("Enter editQuantity", userId, cartItemId, newQuantity);
         User user = userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User with ID " + userId + " not found"));
 
         // get shopping cart
@@ -203,11 +218,13 @@ public class ShoppingCartService{
         cart.updateTotal();
         cartRepo.save(cart);
 
+        log.traceEntry("Leave editQuantity", userId, cartItemId, newQuantity);
         return cart;
     }
 
     @PostMapping("/{userId}/checkout")
     public ResponseEntity<String> checkout(@PathVariable Long userId) {
+        log.traceEntry("Enter checkOut", userId);
         User user = userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User with ID " + userId + " not found"));
 
         // get shopping cart
@@ -227,11 +244,14 @@ public class ShoppingCartService{
         cart.updateTotal();
         cartRepo.save(cart);
 
+        log.traceEntry("Leave checkOut", userId);
         return ResponseEntity.ok("You have checked out ssuccessfully. Your total is $" + total);
     }
  
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable("id") Long id) {
+        log.traceEntry("Enter deleteById", id);
         cartRepo.deleteById(id);
+        log.traceEntry("Leave deleteById", id);
     }
 }
