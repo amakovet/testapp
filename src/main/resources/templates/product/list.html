@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="hero">
+      <div>
+        <p class="title">Product Detail</p>
+        <form method="post" th:action="@{/product}" th:object="${product}">
+          <input
+            class="input"
+            id="id"
+            placeholder=""
+            required
+            th:field="*{id}"
+            type="text"
+            readonly
+          />
+          <input
+            class="input"
+            id="name"
+            placeholder="Enter name"
+            required
+            th:field="*{name}"
+            type="text"
+          />
+          <input
+            class="input"
+            id="category"
+            placeholder="Enter category"
+            required
+            th:field="*{category}"
+            type="text"
+          />
+          <input
+            class="input"
+            id="price"
+            placeholder="Enter price"
+            required
+            th:field="*{price}"
+            type="text"
+          />
+          <input
+            class="input"
+            id="inventory"
+            placeholder="Enter inventory"
+            required
+            th:field="*{inventory}"
+            type="text"
+          />
+          <div class="field is-grouped">
+            <div class="control">
+              <button
+                class="button is-link"
+                th:text="${btnAddOrModifyLabel}"
+              ></button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-light">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      &nbsp; &nbsp;
+      <p class="title">Product List</p>
+      <div th:if="${#lists.isEmpty(products)}">No product</div>
+      <div th:unless="${#lists.isEmpty(products)}">
+        <table class="table is-striped is-bordered">
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>category</th>
+            <th>price</th>
+            <th>inventory</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <tr th:each="product: ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.category}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.inventory}"></td>
+            <td>
+              <a th:href="'product/edit/' + ${product.id}"
+                ><i class="fas fa-user-edit ml-2"></i
+              ></a>
+            </td>
+            <td>
+              <a th:href="'product/delete/' + ${product.id}"
+                ><i class="fas fa-user-times ml-2"></i
+              ></a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <strong>MARKETPLACE</strong> by
+        <a
+          href="https://www.cdm.depaul.edu/academics/pages/courseinfo.aspx?Subject=SE&CatalogNbr=452"
+          >GROUP 3</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>

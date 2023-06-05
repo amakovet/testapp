@@ -17,14 +17,12 @@ public class DepaulmarketplaceApplication {
         SpringApplication.run(DepaulmarketplaceApplication.class, args);
     }
 
-
     @Bean
     public CommandLineRunner product(ProductsRepository repo) {
         return (args) -> {
             log.info("Product Count: " + repo.count());
         };
     }
-
 
     @Bean
     public CommandLineRunner cart(ShoppingCartRepository repo) {
