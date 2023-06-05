@@ -21,4 +21,6 @@ package com.depaul.depaulmarketplace.products;
  * Set up and configured CI build actions process in GIT
  * Set up docker and ran locally
  * Set up NoSQL mongo db version for product service for self learning on NoSQL
+ * Set up UI layer for product service using controller/server side template
+ * engine
  */
