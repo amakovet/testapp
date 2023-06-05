@@ -32,7 +32,6 @@ public class ShoppingCart {
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CartItem> cartItems = new ArrayList<>();
 
-    // cart total with tax exclude
     private double total;
 
     public void addCartItem(List<CartItem> items, CartItem cartItem) {
